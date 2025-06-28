@@ -1,0 +1,79 @@
+<script>
+
+
+
+    /*
+
+
+    PROBLEMA 5: CALCULADORA DE CUSTO DE HOSPEDAGEM
+
+
+    **Descrição do Problema:**
+
+
+    Você foi contratado para criar um sistema para uma pequena pousada. O programa deve calcular o custo total da hospedagem de um cliente com base no tipo de quarto escolhido e na quantidade de noites.
+
+
+    A pousada oferece três tipos de quartos com os seguintes preços por noite:
+
+
+    - **Simples:** R$ 150,00
+    - **Duplo:** R$ 250,00
+    - **Suíte:** R$ 400,00
+
+
+    Além disso, a pousada oferece um desconto progressivo para estadias mais longas:
+
+    - Para estadias de **5 a 9 noites**, o cliente recebe **10% de desconto** sobre o valor total.
+    - Para estadias de **10 noites ou mais**, o cliente recebe **15% de desconto** sobre o valor total.
+
+    Seu programa deve solicitar ao usuário o tipo de quarto (como texto: "Simples", "Duplo" ou "Suíte") e a quantidade de noites. Em seguida, deve calcular e exibir o custo final da hospedagem, já com o desconto aplicado, se houver. Caso o usuário digite um tipo de quarto inválido, exiba uma mensagem de erro.
+
+
+    */
+
+    //ENTRADA
+
+    const tipoQuarto = (prompt("Qual é o seu quarto? (s)simples,(d)duplo (si)suite"));
+    const noites = Number(prompt("Quantas noites você ficou?"));
+    
+    let custoQuarto = 0;
+
+    (tipoQuarto == "s")?
+    custoQuarto = noites * 150:
+    (tipoQuarto == "d")?
+    custoQuarto = noites * 250:
+    (tipoQuarto == "si")?
+    custoQuarto = noites * 400:
+    alert("ERRO");
+    
+
+    desconto = 0;
+
+    (noites >= 5 && noites <= 9)?
+    desconto = custoQuarto * 0.10:
+    (noites >= 10)?
+    desconto = custoQuarto * 0.15:
+    alert("Não ponha o numero 0 nem letras!");
+
+    const preco = custoQuarto - desconto;
+
+
+
+    //PROCESSAMENTO
+    alert("O custo total de R$" + preco.toFixed(2) + " Reais");
+
+
+
+
+
+
+
+
+    //SAÍDA
+
+
+
+
+
+</script>

@@ -1,83 +1,57 @@
 <script>
-/*
- PROBLEMA: CALCULO DE BONFIICAÇÃO DE FUNCIONÁRIO
+    /*
+    PROBLEMA: CALCULO DE BONFIICAÇÃO DE FUNCIONÁRIO
 
- **Descrição:**
+    **Descrição:**
+    Uma empresa deseja criar um sistema para calcular a bonificação de fim de ano
+    de seus funcionários. A bonificação é baseada no tempo de casa e no
+    desempenho do funcionário.
 
+    **Regras de Cálculo:**
+    1. Solicite o salário atual do funcionário.
+    2. Solicite o tempo de casa em anos.
+    3. Solicite a nota de desempenho (de 0 a 10).
 
-Uma empresa deseja criar um sistema para calcular a bonificação de fim de ano
-de seus funcionários. A bonificação é baseada no tempo de casa e no
-desempenho do funcionário.
+    **Cálculo da Bonificação:**
+    - **Bônus por tempo de casa:**
+    - Menos de 1 ano: 0% do salário.
+    - 1 a 5 anos: 5% do salário.
+    - Mais de 5 anos: 10% do salário.
 
+    - **Bônus por desempenho:**
+    - Nota abaixo de 7: 0% do salário.
+    - Nota de 7 a 8.9: 5% do salário.
+    - Nota de 9 a 10: 10% do salário.
 
-
-
-
-**Regras de Cálculo:**
-
-
-1. Solicite o salário atual do funcionário.
-2. Solicite o tempo de casa em anos.
-3. Solicite a nota de desempenho (de 0 a 10).
-
-
-**Cálculo da Bonificação:**
-
-- **Bônus por tempo de casa:**
-
-- Menos de 1 ano: 0% do salário.
-- 1 a 5 anos: 5% do salário.
-- Mais de 5 anos: 10% do salário.
-
-
- - **Bônus por desempenho:**
-
-- Nota abaixo de 7: 0% do salário.
-- Nota de 7 a 8.9: 5% do salário.
-- Nota de 9 a 10: 10% do salário.
-
-
-
-
-
-O bônus total é a soma dos dois bônus (tempo de casa + desempenho).
- O programa deve exibir o valor final da bonificação.
+    O bônus total é a soma dos dois bônus (tempo de casa + desempenho).
+    O programa deve exibir o valor final da bonificação.
 
     Ex: "Sua bonificação total é de R$ XXX.XX".
-
-
     */
 
     //ENTRADA
-
     const salario = Number(prompt("Qual é o seu salário atual? "));
     const tempoCasa = Number(prompt("Quanto é seu tempo de casa em anos?"));
     const nota = Number(prompt("Qual a sua nota de desempenho?"));
 
     //PROCESSAMENTO
-
     let bonusCasa = 0;
     let bonusDesempenho = 0;
 
-    (tempoCasa < 1)?
-    bonusCasa = 0:
-    (tempoCasa >= 1 && tempoCasa <= 5)?
-    bonusCasa = (salario * 0.05):
-    bonusCasa = (salario *0.10) ;
+    (tempoCasa < 1) ?
+        bonusCasa = 0 :
+        (tempoCasa <= 5) ?
+            bonusCasa = (salario * 0.05) :
+            bonusCasa = (salario * 0.10);
 
-    (nota < 7)?
-    bonusDesempenho = 0:
-    (nota <= 8.9)?
-    bonusDesempenho = (salario * 0.05) :
-    bonusDesempenho = (salario * 0.10) ;
+    (nota < 7) ?
+        bonusDesempenho = 0 :
+        (nota <= 8.9) ?
+            bonusDesempenho = (salario * 0.05) :
+            bonusDesempenho = (salario * 0.10);
 
     const bonificacao = bonusCasa + bonusDesempenho
 
-
-
-//SAÍDA
-
+    //SAÍDA
     alert("Sua bonificação é o total de R$" + bonificacao.toFixed(2));
-
-
 </script>

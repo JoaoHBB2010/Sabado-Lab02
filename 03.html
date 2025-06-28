@@ -1,59 +1,47 @@
 <script>
- /*
+    /*
+    PROBLEMA: CATEGORIA DE ATLETA POR IDADE
 
- PROBLEMA: CATEGORIA DE ATLETA POR IDADE
-
-
-**Descrição:**
-
- Uma confederação de natação precisa de um programa que, ao receber a
- idade de um atleta, classifique-o em uma das seguintes categorias:
-
-
-
-
+    **Descrição:**
+    Uma confederação de natação precisa de um programa que, ao receber a
+    idade de um atleta, classifique-o em uma das seguintes categorias:
 
     **Tabela de Categorias:**
+    - Até 8 anos: Infantil A
+    - 9 a 11 anos: Infantil B
+    - 12 a 13 anos: Juvenil A
+    - 14 a 17 anos: Juvenil B
+    - 18 anos ou mais: Adulto
+    - Idade inválida: Se a idade for menor que 0 ou não for um número.
 
-- Até 8 anos: Infantil A
-- 9 a 11 anos: Infantil B
-- 12 a 13 anos: Juvenil A
-- 14 a 17 anos: Juvenil B
-- 18 anos ou mais: Adulto
-- Idade inválida: Se a idade for menor que 0 ou não for um número.
-
-
-O programa deve solicitar a idade e exibir a categoria correspondente.
-
-Ex: "Atleta pertence à categoria: Juvenil A".
-
-*/
+    O programa deve solicitar a idade e exibir a categoria correspondente.
+    Ex: "Atleta pertence à categoria: Juvenil A".
+    */
 
     //ENTRADA
-
     const idade = Number(prompt("Quantal a idade do atleta? "));
 
     //PROCESSAMENTO
     let mensagem = "";
 
-    (idade > 0 && idade <= 8)?
-    mensagem = "Atleta pertence à categoria: Infantil A":
-    (idade > 0 && idade <= 11)?
-    mensagem = "Atleta pertence à categoria: Infantil B":
-    (idade > 0 && idade <= 13)?
-    mensagem = "Atleta pertence à categoria: Juvenil A":
-    (idade > 0 && idade <= 17)?
-    mensagem = "Atleta pertence à categoria: Juvenil B":
-    (idade > 0 && idade >= 18)?
-    mensagem = "Atleta pertence à categoria: Adulto":
-    mensagem = "Idade Inválida! ";
+    (idade > 0 && idade <= 8) ?
+        mensagem = "Atleta pertence à categoria: Infantil A" :
+        (idade > 0 && idade <= 11) ?
+            mensagem = "Atleta pertence à categoria: Infantil B" :
+            (idade > 0 && idade <= 13) ?
+                mensagem = "Atleta pertence à categoria: Juvenil A" :
+                (idade > 0 && idade <= 17) ?
+                    mensagem = "Atleta pertence à categoria: Juvenil B" :
+                    (idade > 0 && idade >= 18) ?
+                        mensagem = "Atleta pertence à categoria: Adulto" :
+                        mensagem = "Idade Inválida! ";
 
 
     //SAÍDA
     alert(mensagem);
 
 
-    
+
 
 
 </script>
